@@ -7,6 +7,7 @@ import categoryRoute from './routes/CategoryRoute.js'
 import productRoute from './routes/ProductRoute.js'
 import cors from 'cors';
 import path from 'path';
+import {fileURLToPath} from 'url';
 
 // Initialize express app
 const app = express();
@@ -16,6 +17,10 @@ dotenv.config();
 
 // Database config
 connectdb();
+
+//esmodule fix
+const  __filename = fileURLToPath(import.meta.url);
+consr __dirname = path.dirname(__filename);
 
 // Middleware
 app.use(cors());
